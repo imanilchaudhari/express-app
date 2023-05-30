@@ -1,0 +1,26 @@
+version: '3'
+services:
+  webapp:
+    build:
+      dockerfile: Dockerfile
+    restart: 'no'
+    ports:
+      - '3000:3000'
+    volumes:
+      - './:/usr/src/app/'
+    links:
+      - mongodb
+      - mongoui
+  mongodb:
+    image: 'mongo:4.0.4'
+    restart: 'no'
+    environment:
+      MONGODB_INITDB_ROOT_USERNAME: root
+      MONGODB_INITDB_ROOT_PASSWORD: root
+  mongoui:
+    image: ugleiton/mongo-gui
+    restart: 'no'
+    ports:
+      - "4321:4321"
+    environment:
+      - MONGO_URL=mongodb://mongodb:27017:demo

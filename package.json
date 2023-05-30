@@ -1,0 +1,41 @@
+{
+  "name": "express-app",
+  "version": "1.0.0",
+  "description": "Demo app built in ExpressJS",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.13"
+  },
+  "devDependencies": {
+    "mocha": "^10.2.0",
+    "nodemon": "^2.0.1",
+    "supertest": "4.0.2"
+  },
+  "scripts": {
+    "test": "mocha",
+    "watch": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imanilchaudhari/express-app.git"
+  },
+  "keywords": [
+    "nodejs",
+    "expressjs",
+    "restapi"
+  ],
+  "author": "Anil Chaudhari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imanilchaudhari/express-app/issues"
+  },
+  "homepage": "https://github.com/imanilchaudhari/express-app#readme"
+}
