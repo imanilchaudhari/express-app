@@ -11,6 +11,7 @@ services:
     links:
       - mongodb
       - mongoui
+      - mariadb
   mongodb:
     image: 'mongo:4.0.4'
     restart: 'no'
@@ -24,3 +25,16 @@ services:
       - "4321:4321"
     environment:
       - MONGO_URL=mongodb://mongodb:27017:demo
+  mariadb:
+    image: 'mariadb:10.3.28'
+    restart: 'no'
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: 'db_demo'
+  adminer:
+    image: adminer
+    restart: 'no'
+    links:
+      - mariadb
+    ports:
+      - '9090:8080'

@@ -1,8 +1,8 @@
-# Node API Demo
+# RESTfull API built with ExpressJS, MariaDB & MongoDB
 
 [![Build Status](https://travis-ci.org/imanilchaudhari/express-app.svg?branch=master)](https://travis-ci.org/imanilchaudhari/express-app)
 
-Demo app built with ExpressJS.
+Demo RESTfull API built with ExpressJS, MariaDB & MongoDB.
 
 ## Tech Stack
 
@@ -12,11 +12,13 @@ Demo app built with ExpressJS.
   - Express for initiating the server
   - Mongoose for interracting with MongoDB
   - BodyParser to parse request body
+  - MySQL for interracting with MariDB
 - MongoDB 4.0 (Docker container recommended)
+- MariaDB 10.3 (Docker container recommended)
 
 ## Walkthrough
 
-### Set-up Mongo Docker (Recommended)
+### Set-up Docker (Recommended)
 
 ```
 docker compose -f "docker-compose.yml" up -d --build
@@ -31,6 +33,11 @@ OR
 
 npm start run
 ```
+
+### Import mysql table schema
+
+Open adminer & create ```posts``` table in ```db_demo``` database. You can find the schema in [./resources/posts.sql](./resources/posts.sql)
+
 
 ### Create a sample post
 

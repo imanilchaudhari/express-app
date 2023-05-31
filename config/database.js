@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const mongoHost = process.env.MONGO_CONNECTION_STRING || "mongodb://mongodb:27017/demo";
+const mongoHost = process.env.MONGO_CONNECTION_STRING || "mongodb://mongodb:27017/db_demo";
 const Post = require("../src/models/post"); //created model loading here
 const User = require("../src/models/user"); //created model loading here
 
