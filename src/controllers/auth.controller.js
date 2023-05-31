@@ -84,4 +84,25 @@ AuthController.signup = (req, res) => {
   });
 };
 
+AuthController.profile = (req, res) => {
+  if (!req.user) {
+    res.status(403)
+      .send({
+        message: "Invalid JWT token",
+      });
+  }
+  if (req.user.role == "admin") {
+    res.status(200)
+      .send({
+        message: "Data fetched successfully.",
+        data: req.user
+      });
+  } else {
+    res.status(403)
+      .send({
+        message: "Unauthorised access"
+      });
+  }
+};
+
 module.exports = AuthController;
