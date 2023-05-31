@@ -1,5 +1,6 @@
 "use strict";
 const app = require("express")();
+require("dotenv").config();
 const connectDB = require("./config/database");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");

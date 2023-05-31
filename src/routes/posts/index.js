@@ -1,7 +1,7 @@
 'use strict';
 const express = require('express');
 const router = express.Router();
-const PostController = require('../../controllers/PostController');
+const PostController = require('../../controllers/post.controller');
 
 router.get('/', PostController.index);
 router.post('/', PostController.create);

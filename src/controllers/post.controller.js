@@ -1,6 +1,6 @@
 'use strict';
 const mongoose = require('mongoose');
-const Post = mongoose.model('Posts');
+const Post = mongoose.model('Post');
 
 let PostController = {};
 
