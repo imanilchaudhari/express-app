@@ -1,5 +1,7 @@
 "use strict";
-const app = require("express")();
+const express = require('express');
+const app = express();
+
 require("dotenv").config();
 const connectDB = require("./config/database");
 const bodyParser = require("body-parser");
@@ -11,6 +13,8 @@ const serverPort = process.env.PORT || 3000;
 let index = require("./src/routes/index");
 
 connectDB();
+
+app.use(express.json())
 
 //Parse incoming request bodies and register nested route
 app.use(
