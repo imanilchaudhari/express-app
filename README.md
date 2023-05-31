@@ -6,7 +6,7 @@ Demo app built with ExpressJS.
 
 ## Tech Stack
 
-- Node.js 10.14.x
+- Node.js 16
 - NPM Libraries
   - Nodemon for Debugging and keeping track of changed files
   - Express for initiating the server
@@ -19,18 +19,18 @@ Demo app built with ExpressJS.
 ### Set-up Mongo Docker (Recommended)
 
 ```
-docker pull mongo
-
-docker run -p 27017:27017 -v ~/data/db:/data/db --name mongodb -d  mongo
+docker compose -f "docker-compose.yml" up -d --build
 ```
 
 ### Starting the REST API Server
 
 ```
+nodemon server.js
+
+OR
+
 npm start run
 ```
-
-View the OpenAPI documentation @ http://localhost:3000/api-docs
 
 ### Create a sample post
 
@@ -42,8 +42,8 @@ curl -X POST \
   -H 'Content-Type: application/json' \
   -H 'Host: localhost:3000' \
   -d '{
-	"name" : "Do something",
-	"status" : "pending"
+	"title" : "Post Title",
+	"content" : "Post content goes here."
 }'
 ```
 
