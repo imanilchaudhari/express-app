@@ -13,7 +13,7 @@ router.post('/signup', AuthController.signup, function (req, res) {
   console.log(res);
 });
 router.post("/profile", verifyToken, function (req, res, next) {
-  AuthController.profile(req, res, text);
+  AuthController.profile(req, res, next);
 });
 
 module.exports = router;
